@@ -1,0 +1,203 @@
+<html>
+<head>
+<style type="text/css">
+body {
+	background-color: white;
+		font-family: "Trebuchet MS", Trebuchet MS, sans-serif;
+}
+#container {
+	/* border: 2px solid #afafaf; */
+	min-width: 960px; 
+	height: 99%;
+	background-color: #eac325;
+	background-color: #ffffec;
+	margin: 0 auto;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+
+}
+#header {
+	height: 100px;
+	background-color: #eac326; /*
+	background-image: -webkit-gradient(
+		linear,
+		right top,
+		left top,
+		color-stop(0.31, #F2BB31),
+		color-stop(0.46, #FFE8A2)
+	);
+	background-image: -moz-linear-gradient(
+		right center,
+		#F2BB31 31%,
+		#FFE8A2 46%
+	); */
+	background-color: #ffe8a2;
+	border-bottom-width: 1px;
+	border-bottom-style: outset;
+	border-bottom-color: #FFF;
+	text-align:center;
+}
+#searchBox {
+	height: 30px;
+	width: 500px;
+	margin-top: 30px;
+	margin-left: 10px; 
+	overflow:hidden;
+	background-color: #dceffe;
+	border: 2px solid #3b729d;
+}
+#headerList {
+	list-style-type: none;
+	margin: 0;
+	text-align: center;
+}
+#headerList li {
+	float: left;	
+}
+#headerList .logo {
+	margin-top: 20px;	
+}
+#accountSettings{
+	margin-top: 20px;
+}
+#accountSettings a {
+		font-family:Arial, Helvetica, sans-serif;
+		width: 60px;
+		padding: 10px; 
+		background: url(imgs/navGradTrans.png) repeat-x left top;
+		background-color: #487db1;
+		color: white;
+		text-decoration: none;
+		-moz-border-radius: 5px;
+		border-radius: 5px; 
+}
+#accountSettings li {
+		margin: 9px;	
+}
+#angText {
+		text-align: center;
+		margin-top: 250px;
+		font-family:Arial, Helvetica, sans-serif;
+		font-weight: bold;
+		font-size: 70px;
+		color:#CCC;
+}
+#aboutUs {
+		position: absolute;
+		top: 120px;
+		left: 30px;
+		text-align: center;
+		font-family: "Trebuchet MS", Trebuchet MS, sans-serif;
+		padding: 20px;
+		background-color: #f2ba31;
+		border: 2px solid #ffe8a2;
+		width: 200px;
+}
+#aboutUs h2 {
+		color: #3b719b;
+}
+#aboutUs h4 {
+		color: #6895b7;
+}
+#yourKeychain {
+		position: absolute;
+		top: 120px;
+		left: 800px;
+		background-color: #dceffe;
+		border: 2px solid #3b729d;
+		padding: 10px;
+		width: 150px; 
+}
+#yourKeychain ul {
+		list-style-type: none;
+}
+#yourKeychain li {
+		text-align: center;
+		width: 100px;
+		height: 20px;
+		background-color: #3b729d;
+		border-radius: 3px;
+		color: #dceffe;
+		margin-bottom: 4px;
+		padding: 2px;  
+}
+.slogan {
+		font-family: "Trebuchet MS", Trebuchet MS, sans-serif;
+		color: #3b719b;
+
+}
+.link {
+		font-family: "Trebuchet MS", Trebuchet MS, sans-serif;
+		color: #dceffe;
+		font-weight: bold; 
+		text-shadow:1px 1px 1px #3B719B;
+		text-decoration: none;
+}
+.shadowDark {
+}
+.shadowLight {
+}
+
+.buttonStyle {
+	background-color: #3b719b;
+	background: #3b719b url(imgs/navGradTrans.png) repeat-x left top;
+	color: #eac326;
+	padding: 5px;
+	-moz-border-radius: 4px;
+	border-radius: 4px;
+}
+</style>
+<script type="text/javascript">
+	window.onload = function(){
+	var width = window.innerWidth;
+
+	document.getElementById("yourKeychain").style.left = width-180 +"px";
+	}
+	window.onresize = function(){
+	var width = window.innerWidth;
+
+	document.getElementById("yourKeychain").style.left = width-180 +"px";
+	}
+</script>
+</head>
+<body>
+<div id="container">
+  <div id="header">
+  	<ul id="headerList">
+        <li>
+            <img class="logo" src="imgs/Logo7.png"  /><br />
+		 <img class="slogan" src="imgs/Slogan.png"  />
+        </li>
+        <li>
+          <form id="searchForm">
+            <textarea id="searchBox"></textarea>
+              <input class="buttonStyle" type="submit" value="Search" />
+          </form>
+        </li>
+	   <li>
+		<a class="link" href="#">Sign In</a> | <a class="link" href="#">Your Account</a>
+ 	   </li>
+     </ul>
+  </div>
+  
+  <div id="angText">
+  	ANG FLOW
+  </div>
+  <div id="aboutUs">
+	<h2 class="shadowLight">Make Your Marq</h2>
+
+      <h4 class="shadowDark">Collect media across the web</h4>
+	<button class="buttonStyle" value="Marq Now">Marq Now</button>
+  </div>
+  <div id="yourKeychain">
+	<h3>your keychains</h3>
+	<ul>
+		<li>Matt Damon</li>
+		<li>films</li>
+		<li>funny shit</li>
+		<li>yale</li>
+	</ul>
+  </div>
+</div>
+</body>
+</html>

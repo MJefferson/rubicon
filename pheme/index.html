@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+		<title>Pheme Mock-up I</title>
+		<link type="text/css" href="jquery-ui-1.8.7/css/smoothness/jquery-ui-1.8.7.custom.css" rel="stylesheet" />	
+		<script type="text/javascript" src="jquery-ui-1.8.7/js/jquery-1.4.4.min.js"></script>
+		<script type="text/javascript" src="jquery-ui-1.8.7/js/jquery-ui-1.8.7.custom.min.js"></script>
+		<script type="text/javascript">
+			$(function(){
+				$('#date').datepicker();
+				$("#notifications").position({
+					of: $("#banner"),
+					my: "left top",
+					at: "right center",
+					offset: "800 0",
+					collision: "fit fit"
+					});
+				$("#minifeed").tabs();
+				$("#minifeed").position({
+					of: $("#projSuggModule"),
+					my: "left top",
+					at: "right top",
+					offset: "40 60",
+					collision: "fit fit"
+				});
+				$("#appToolbox").tabs();
+				$("#appButtons1").buttonset();
+				$("#appButtons2").buttonset();
+				$("#projectsModule").tabs();
+				$("#prjButton1").button();
+				$("#prjButton2").button();
+				$("#rightSidebar").position({
+					of: $("#minifeed"),
+					my: "left top",
+					at: "right top",
+					offset: "70 0",
+					collision: "fit fit"
+				});
+				
+			});
+		</script>
+		<style type="text/css">
+			/*demo page css*/
+			body{ font: 62.5% "Trebuchet MS", sans-serif; margin: 20px;}
+			.demoHeaders { margin-top: 2em; }
+			#dialog_link {padding: .4em 1em .4em 20px;text-decoration: none;position: relative;}
+			#dialog_link span.ui-icon {margin: 0 5px 0 0;position: absolute;left: .2em;top: 50%;margin-top: -8px;}
+			ul#icons {margin: 0; padding: 0;}
+			ul#icons li {margin: 2px; position: relative; padding: 4px 0; cursor: pointer; float: left;  list-style: none;}
+			ul#icons span.ui-icon {float: left; margin: 0 4px;}
+			
+			#notifications { list-style:none; position:absolute; margin: 0px; }
+			#notifications li { float: left; margin-right: 3px; }
+				.noticeType { font: 12px "Courier New", Courier, monospace; font-weight: bold; color:#666666; }
+				.noticeCount { font: 12px "Courier New", Courier, monospace; font-weight: bold; color: #333333; margin-left: 1px; }
+			
+			#appSuggModule { max-width: 120px; }
+			#projSuggModule { max-width: 120px; }
+			.label { font-size: 15px; font: "Courier New", Courier, monospace; font-weight: bold; color:#990000;}
+			#similar { list-style:none; }
+				.prjTitle { font-size: 12px; font: 12px "Courier New", Courier, monospace; text-decoration: none; color:#333333; }
+				.prjDesc { font-size: 10px; color:#666666; }
+				
+			#minifeed { position: absolute; width: 650px; font: "Courier New", Courier, monospace;}
+				.feedContent { list-style: none; }
+				.feedContent li { clear: both; padding-bottom: 50px; }
+				.feedContent a { font-size: 12px; font-weight: bold; text-decoration:none; color:#0066FF; }
+				.feedContent img { float: left; margin-right: 5px; }
+				.addClipsList { list-style: none; padding-bottom: 5px; }
+				.addClipsList li { float: left; padding-bottom: 0px; clear: none;}
+
+			#rightSidebar { position: absolute; }				
+			#appToolboxModule { max-width: 300px; }
+			#appToolboxModule li { }
+			#appToolbox ul { list-style:none; }
+			
+			#projects ul { list-style:none; }
+		</style>	
+	</head>
+	<body>
+    <img id="banner" src="logo5.png" />
+
+        	<ul id="notifications">
+            	<li><a href="#" class="noticeType">Inbox</a><span class="noticeCount">(23)</span></li>
+            	<li><a href="#" class="noticeType">Requests</a><span class="noticeCount">(10)</span></li>
+            	<li><a href="#" class="noticeType">Upcoming Tasks</a><span class="noticeCount">(3)</span></li>
+            </ul>
+
+			<dl id="projSuggModule">
+			<lh class="label">Recommended Projects</lh>
+				<dt>
+                <ul id="similar">
+                    <li><img class="prjThumb" src="http://ia.media-imdb.com/images/M/MV5BMTk4NTk4MTk1OF5BMl5BanBnXkFtZTcwNTE2MDIwNA@@._V1._SX86_CR0,0,86,86_.jpg"/><br /> <a class="prjTitle" href="#">Tron</a><br /><span class="prjDesc">Blah blah blah.</span></li>
+                    <li><img class="prjThumb" src="http://ia.media-imdb.com/images/M/MV5BMTEyNzI0MzM4NTReQTJeQWpwZ15BbWU3MDUzMzYwMTQ@._V1._SX86_CR0,0,86,86_.jpg"/><br /> <a class="prjTitle" href="#">Cowboys & Aliens</a><br /><span class="prjDesc">Blah blah blah.</span></li>
+                    <li><img class="prjThumb" src="http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1._SX86_CR0,0,86,86_.jpg"/><br /> <a class="prjTitle" href="#">Inception</a><br /><span class="prjDesc">Blah blah blah.</span></li>
+                    <li><img class="prjThumb" src="http://ia.media-imdb.com/images/M/MV5BOTAwNTE0ODU5NV5BMl5BanBnXkFtZTcwMzMzMjAwMQ@@._V1._CR0,0,216,216_SS100_.jpg"/><br /> <a class="prjTitle" href="#">Jules et Jim</a><br /><span class="prjDesc">Blah blah blah.</span></li>
+           		</ul>
+                </dt>
+           </dl>
+			<dl id="appSuggModule">
+			<lh class="label">Recommended Tools</lh>
+				<dt>
+                <ul id="similar">
+                    <li><img class="prjThumb" src="http://www.toptenreviews.com/i/rev/prod/1140-adobe-premiere-elements-box.jpg"/><br /> <a class="prjTitle" href="#">Adobe Premiere Elements 9</a><br /><span class="prjDesc">Blah blah blah.</span></li>
+                    <li><img class="prjThumb" src="http://www.toptenreviews.com/i/rev/prod/1143-sony-vegas-movie-studio-platinum-box.jpg"/><br /> <a class="prjTitle" href="#">Sony Vegas Movie Studio Platinum 10</a><br /><span class="prjDesc">Blah blah blah.</span></li>
+                    <li><img class="prjThumb" src="http://lh5.googleusercontent.com/public/wm15o0TnybPUVpCt-O-6M-KZ-cyfHaFZ904l8vAizXS5On7YAqEVFFFxxH3SO8B8BjwJrsC2xfgedKBvof57x_7Z2vXkUlMieVn_0Bz49TTZVYqQg5ZQkaLY5gnN-KmRWxpO9XUAMxr3Vn2mSXfsz-EsKURRgSgLpXWsghoCvF9uOeHCFasyehZ36X9OTcmj=s90"/><br /> <a class="prjTitle" href="#">Final Cut Studio</a><br /><span class="prjDesc">Blah blah blah.</span></li>
+           		</ul>
+                </dt>
+           </dl>
+    <input type="text" name="date" id="date" />
+    
+		<div id="minifeed">
+			<ul>
+				<li><a href="#minifeed-1">Global</a></li>
+				<li><a href="#minifeed-2">Films</a></li>
+				<li><a href="#minifeed-3">Seattle</a></li>
+				<li><a href="#minifeed-4">PhemeSpark</a></li>
+			</ul>
+			<div id="minifeed-1">
+            	<ul class="feedContent">
+                	<li><a href="#">Women in Chains</a> joined the Seattle network.</li>
+                	<li><div><img src="bakal.jpg" /><div><a href="#">Matt Bakal</a> added <a href="#">The Matrix</a> to their favorite projects.</div></div></li>
+                    <li><a href="#">Madronnesian Wars</a> added 5 new clips to their <a href="#">Final Cut Pro</a> storyboard.
+                    	<ul class="addClipsList">
+                        	<li><img src="http://lh3.ggpht.com/_x6a6zNCpJ6E/RpI4YGIEnDI/AAAAAAAAALM/_XxPgmtYp4c/s144/NeoProto.jpg" height=50 width="50"/></li>
+                            <li><img src="http://lh3.ggpht.com/_x6a6zNCpJ6E/RopSWGIEm3I/AAAAAAAAAIs/Y5KHsR2Zgss/s144/Render%202.png.jpg" height=50 width="50"/></li>
+                            <li><img src="http://lh6.ggpht.com/_x6a6zNCpJ6E/RfbyktAhXSI/AAAAAAAAAB4/_ymndTFR96M/s144/Rear.JPG" height=50 width="50"/></li>
+                            <li><img src="http://lh6.ggpht.com/_x6a6zNCpJ6E/RjKycWIuTWI/AAAAAAAAAFE/D5a1JZ7dUq4/s144/Triad.jpg" height=50 width="50"/></li>
+                            <li><img src="http://lh6.ggpht.com/_x6a6zNCpJ6E/Ro0F1GIEm5I/AAAAAAAAAJM/rzBQaxwmVto/s144/Atrium.PNG.jpg" height=50 width="50"/></li>
+                        </ul>
+                    </li>
+                	<li><img src="rico.jpg" /><a href="#">Rico Rodriguez</a> added <a href="#">Marq Jefferson</a> to the <a href="#">PhemeSpark</a> team.</li>
+                    <li><img src="chris.jpg" /><a href="#">Cris Chisholm</a> is now friends with <a href="#">Rico Rodriguez</a> and <a href="#">Matt Bakal</a>.</li>
+                	<li><img src="rico.jpg" /><a href="#">Rico Rodriguez</a> is declared Most Excellent Chancellor of the <a href="#">PhemeSpark</a> team.</li>
+                </ul>
+            </div>
+			<div id="minifeed-2">
+            	<ul class="feedContent">
+                	<li><a href="#">Women in Chains</a> joined the Seattle network.</li>
+                	<li><div><img src="bakal.jpg" /><div><a href="#">Matt Bakal</a> added <a href="#">The Matrix</a> to their favorite projects.</div></div></li>
+                    <li><a href="#">Madronnesian Wars</a> added 5 new clips to their <a href="#">Final Cut Pro</a> storyboard.
+                    	<ul class="addClipsList">
+                        	<li><img src="http://lh3.ggpht.com/_x6a6zNCpJ6E/RpI4YGIEnDI/AAAAAAAAALM/_XxPgmtYp4c/s144/NeoProto.jpg" height=50 width="50"/></li>
+                            <li><img src="http://lh3.ggpht.com/_x6a6zNCpJ6E/RopSWGIEm3I/AAAAAAAAAIs/Y5KHsR2Zgss/s144/Render%202.png.jpg" height=50 width="50"/></li>
+                            <li><img src="http://lh6.ggpht.com/_x6a6zNCpJ6E/RfbyktAhXSI/AAAAAAAAAB4/_ymndTFR96M/s144/Rear.JPG" height=50 width="50"/></li>
+                            <li><img src="http://lh6.ggpht.com/_x6a6zNCpJ6E/RjKycWIuTWI/AAAAAAAAAFE/D5a1JZ7dUq4/s144/Triad.jpg" height=50 width="50"/></li>
+                            <li><img src="http://lh6.ggpht.com/_x6a6zNCpJ6E/Ro0F1GIEm5I/AAAAAAAAAJM/rzBQaxwmVto/s144/Atrium.PNG.jpg" height=50 width="50"/></li>
+                        </ul>
+                    </li>
+                        </ul>
+            </div>
+			<div id="minifeed-3">
+            	<ul class="feedContent">
+                	<li><a href="#">Women in Chains</a> joined the Seattle network.</li>
+                        </ul>
+            </div>
+			<div id="minifeed-4">
+                    	<ul class="feedContent">
+                	<li><img src="rico.jpg" /><a href="#">Rico Rodriguez</a> added <a href="#">Marq Jefferson</a> to the <a href="#">PhemeSpark</a> team.</li>
+                	<li><img src="rico.jpg" /><a href="#">Rico Rodriguez</a> is declared Most Excellent Chancellor of the <a href="#">PhemeSpark</a> team.</li>
+                        </ul></div>
+		</div>
+		<div id="rightSidebar">
+			<dl id="appToolboxModule">
+			<lh class="label">Your Toolbox</lh>
+				<dt>
+                <div id="appToolbox">
+                    <ul>
+                        <li><a href="#appToolbox-1">Premiere Elements 9</a></li>
+                        <li><a href="#appToolbox-2">Final Cut Studio</a></li>
+                    </ul>
+                    <div id="appToolbox-1">
+                    	<ul>
+                        	<li><img class="prjThumb" src="http://www.toptenreviews.com/i/rev/prod/1140-adobe-premiere-elements-box.jpg"/></li>
+                        	<li>Recent: RoughDraft.adb</li>
+                            <li>Modified: 5:00PM December 18, 2010</li>
+                        </ul>
+                        <div id="appButtons1">
+                            <input type="radio" id="radio1" name="radio" /><label for="radio1">Upload</label>
+                            <input type="radio" id="radio2" name="radio" checked="checked" /><label for="radio2">Launch App</label>
+                        </div>
+                    </div>
+                    <div id="appToolbox-2">
+                    	<ul>
+                        	<li><img class="prjThumb" src="http://lh5.googleusercontent.com/public/wm15o0TnybPUVpCt-O-6M-KZ-cyfHaFZ904l8vAizXS5On7YAqEVFFFxxH3SO8B8BjwJrsC2xfgedKBvof57x_7Z2vXkUlMieVn_0Bz49TTZVYqQg5ZQkaLY5gnN-KmRWxpO9XUAMxr3Vn2mSXfsz-EsKURRgSgLpXWsghoCvF9uOeHCFasyehZ36X9OTcmj=s90"/></li>
+                        	<li>Recent: OfficeScenesRough.adb</li>
+                            <li>Modified: 2:00AM December 18, 2010</li>
+                        </ul>
+                        <div id="appButtons2">
+                            <input type="radio" id="radio1" name="radio" /><label for="radio1">Upload</label>
+                            <input type="radio" id="radio2" name="radio" checked="checked" /><label for="radio2">Launch App</label>
+                        </div>
+                    </div>
+           		</div>
+                </dt>
+           </dl>
+			<dl id="projectsModule">
+			<lh class="label">Your Projects</lh>
+				<dt>
+                <div id="projects">
+                    <ul>
+                        <li><a href="#projects-1">PhemeSpark</a></li>
+                        <li><a href="#projects-2">Madronnesian Wars</a></li>
+                    </ul>
+                    <div id="projects-1">
+                    	<ul>
+                        	<li><img class="prjThumb" src="http://www.toptenreviews.com/i/rev/prod/1140-adobe-premiere-elements-box.jpg"/></li>
+                        	<li>Recent: RoughDraft.adb</li>
+                            <li>Modified: 5:00PM December 18, 2010</li>
+                        </ul>
+						<button id="prjButton1">Edit</button>
+                    </div>
+                    <div id="projects-2">
+                    	<ul>
+                        	<li><img class="prjThumb" src="http://lh5.googleusercontent.com/public/wm15o0TnybPUVpCt-O-6M-KZ-cyfHaFZ904l8vAizXS5On7YAqEVFFFxxH3SO8B8BjwJrsC2xfgedKBvof57x_7Z2vXkUlMieVn_0Bz49TTZVYqQg5ZQkaLY5gnN-KmRWxpO9XUAMxr3Vn2mSXfsz-EsKURRgSgLpXWsghoCvF9uOeHCFasyehZ36X9OTcmj=s90"/></li>
+                        	<li>Recent: OfficeScenesRough.adb</li>
+                            <li>Modified: 2:00AM December 18, 2010</li>
+                        </ul>
+						<button id="prjButton2">Edit</button>
+                    </div>
+           		</div>
+                </dt>
+           </dl>
+		</div>
+    </body>
+    </html>

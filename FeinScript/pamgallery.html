@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN"
+"http://www.w3.org/TR/1998/REC-html40-19980424/loose.dtd">
+<HTML>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="resources/Grace.css" />
+    <script language="JavaScript" type="text/javascript" src="resources/client.js"></script>
+    <script type="text/javascript" src="anarchy_media/anarchy.js"></script>
+	<script type="text/javascript">
+	 function anarchyPrep(){
+		var images = document.images;
+		var src = '';
+
+		for(var i in images){
+ 			if(images[i].alt == "original"){
+			 src = images[i].src;
+			 ext = src.substring(src.length-3);
+			 if(ext == "mov" || ext == "mp3"){
+			   alert(src);
+			 var myLink = document.createElement("a");
+			 myLink.href = src;
+			 myLink.innerHTML = "This is a link.";
+			  cell = images[i].parentNode;
+			 var replaced = cell.replaceChild(myLink,images[i]);
+			 }
+			 }
+	
+		}
+	 }
+</script>
+    <title>Portfolio Web Site</title> 
+</head>
+
+<BODY CLASS="white" onLoad="">
+<TABLE ID="nav" SUMMARY="navigation table" NAME="nav" CELLPADDING="0" CELLSPACING="10" WIDTH="450">
+
+	<TR>
+		<TD WIDTH="20">
+			<IMG SRC="../media/spacer.gif" ALT="spacer" WIDTH="20" HEIGHT="1" BORDER="0"> 
+		</TD>
+		<TD CLASS="nav" WIDTH="150" ALIGN="center" NOWRAP>
+			<P CLASS="ar11D">
+				&nbsp; &nbsp; 
+Fein-1258.jpg				&nbsp; &nbsp; 
+			</P>
+
+		</TD>
+		<TD WIDTH="120">
+			<P CLASS="ar11W">
+				&nbsp; 
+		</TD>
+		<TD HEIGHT="20" ALIGN="right" NOWRAP>
+			<P CLASS="ar11W">
+				&nbsp; &nbsp; <A HREF="javascript:window.close()"> close window </A> &nbsp; &nbsp; 
+			</P>
+
+		</TD>
+	</TR>
+</TABLE>
+<TABLE ID="viewer" SUMMARY="viewer table" NAME="viewer" CELLPADDING="0" CELLSPACING="10">
+	<TR>
+		<TD WIDTH="20">
+			<IMG SRC="../media/spacer.gif" ALT="spacer" WIDTH="20" HEIGHT="1" BORDER="0"> 
+		</TD>
+		<TD ID="MEDIAFILE" ALIGN="LEFT">
+			<IMG SRC="resources/1791.mov" BORDER="0" ALT="original">
+            <a href="http://mastermindempire.com/Union.mp3">Testing anarchy...</a>
+		</TD>
+
+	</TR>
+</TABLE>
+<BR>
+</BODY>
+</HTML>

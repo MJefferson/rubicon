@@ -1,0 +1,126 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Rubicon</title>
+        <style type="text/css">
+            body { background-color: rgb(202,202,202); background-color: black;
+                   font-family:"Palatino Linotype","Book Antiqua", Palatino, serif;
+                   font-size: 2px; }
+
+            #Elyria { margin: 0 auto; width: 1050px; background-color: black; }
+            #universe { margin: 0 auto; border-top: 15px solid #211E1B; -moz-border-radius: 5px; background-color: rgb(110,11,6); opacity: .9;}
+            #firmament { background-color: rgb(202,202,202); background-image: url(imgs/SoldierofRome2.png); 
+                   background-repeat: no-repeat; -moz-border-radius: 5px; }
+
+            #header { color: rgb(250,250,250); margin-bottom: 20px;
+                      text-align: center; -moz-border-radius: 5px;
+                      padding-left: 2px; font-family: lucida; 
+                      font-family:"Palatino Linotype","Book Antiqua", Palatino, serif; font-size: 40px;
+                      background-color: rgb(110,11,6); }
+
+            #inputWindow {  }
+            #directions { color: white; }
+            #band { background-color: white; color: blue; }
+            #Latintab { background-color: rgb(90,6,3); opacity: 1; -moz-border-radius: 5px; }
+            #langlabel { background-color: rgb(50,0,0); color: rgb(100,100,100); }
+            #footer { text-align: right; color: white; font-size: 12px; padding-right: 3px; padding-bottom: 3px; }
+            table { color: gray; text-align: left; }
+            textarea { border: 1px solid rgb(191,19,14); margin: 1px; margin-left: 6px; margin-bottom: 6px; color: rgb(129,53,0); font-family:"Palatino Linotype","Book Antiqua", Palatino, serif; }
+        </style>
+
+        <link rel="icon" href="favicon.ico">
+        <link rel="shortcut icon" href="favicon.ico">
+        <script type="text/javascript">
+///
+            var symbols = new Array(20);
+            for(var count = 0; count < symbols.length; count++){
+                symbols[count] = new Array(2);
+            }
+            symbols[0][0] = "Along"; symbols[0][1] = "\u0100";
+            symbols[1][0] = "Elong"; symbols[1][1] = "\u0112";
+            symbols[2][0] = "Ilong"; symbols[2][1] = "\u012a";
+            symbols[3][0] = "Olong"; symbols[3][1] = "\u014c";
+            symbols[4][0] = "Ulong"; symbols[4][1] = "\u016a";
+            symbols[5][0] = "along"; symbols[5][1] = "\u0101";
+            symbols[6][0] = "elong"; symbols[6][1] = "\u0113";
+            symbols[7][0] = "ilong"; symbols[7][1] = "\u012b";
+            symbols[8][0] = "olong"; symbols[8][1] = "\u014d";
+            symbols[9][0] = "ulong"; symbols[9][1] = "\u016b";
+
+            symbols[10][0] = "Ashort"; symbols[10][1] = "\u0102";
+            symbols[11][0] = "Eshort"; symbols[11][1] = "\u0114";
+            symbols[12][0] = "Ishort"; symbols[12][1] = "\u01cf";
+            symbols[13][0] = "Oshort"; symbols[13][1] = "\u014e";
+            symbols[14][0] = "Ushort"; symbols[14][1] = "\u016c";
+            symbols[15][0] = "ashort"; symbols[15][1] = "\u0103";
+            symbols[16][0] = "eshort"; symbols[16][1] = "\u0115";
+            symbols[17][0] = "ishort"; symbols[17][1] = "\u01d0";
+            symbols[18][0] = "oshort"; symbols[18][1] = "\u014f";
+            symbols[19][0] = "ushort"; symbols[19][1] = "\u016d";
+
+          function makeLegend(){
+            var table = "<table id=\"Latintab\"><tr><td>";
+            table += "<table><tr><th>Symbol</th><th>Keyword</th></tr>";
+            for(var count=0; count < 10; count++){
+                table += "<tr><td>"+symbols[count][1]+"</td><td>"+symbols[count][0]+";</td></tr>";
+            }
+            table += "</table></td>";
+
+            table += "<td><table><tr><th>Symbol</th><th>Keyword</th></tr>";
+            for(var count=10; count < symbols.length; count++){
+                table += "<tr><td>"+symbols[count][1]+"</td><td>"+symbols[count][0]+";</td></tr>";
+            }
+            table += "</table></td>";
+v
+            table += "</tr><tr><th colspan=2 align=center><div id=\"langlabel\">LATIN</div></th></tr></table>";
+
+            document.getElementById("legend").innerHTML = table;
+
+            document.getElementById("inputWindow").onkeyup = transform;
+          }
+
+          function transform(evt){
+
+                var feedback = document.getElementById("feedback");
+                 if (!evt) var evt = window.event;
+                var trigger = evt.keyCode;
+          //      feedback.innerHTML = trigger;
+              if((trigger == 59) || (trigger == 186)){
+                for(var countOne = 0; countOne < symbols.length; countOne++){
+                    var input = new RegExp(symbols[countOne][0]+";","g");
+                    var newstring = document.getElementById("input").value.replace(input,symbols[countOne][1]);
+                    document.getElementById("input").value = newstring;
+                }
+              }
+          }
+        </script>
+    </head>
+    <body onload="makeLegend();">
+      <div id="Elyria">
+            <div id="header">R&#362;B&#298;C&#332;N</div>
+        <div id="firmament">
+        <div id="universe">
+            <table>
+            <tr><td>
+            <div id="toolbar">This is where the toolbar is.</div>
+            <div id="inputWindow">
+                <span id="directions">Type your text below, substituting the "keyword" (including the semi-colon) for any accented character you require.</span><br>
+                <textarea id="input" rows="17" cols="98"></textarea>
+            </div>
+vv            </td>
+            <td>
+            <div id="legend"></div>
+            </td>
+            </table>
+            <div id="footer">Copyright 2008 &copy; Yale University<br>Instructional Technology Group<br>Built by Marq Jefferson</div>
+            <div id="feedback"></div>
+            
+            <?php
+            // put your code here
+            ?>
+        </div>
+        </div>
+     </div>
+    </body>
+</html>

@@ -1,0 +1,3 @@
+AuthType CAS
+Require valid-user
+DirectoryIndex index.html

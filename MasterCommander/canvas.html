@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>MJ Portfolio</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Martial" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<link href='http://fonts.googleapis.com/css?family=Geo' rel='stylesheet' type='text/css'>
+		<link href="index.css" rel='stylesheet' type='text/css'>
+		<!--[if lt IE 9]>
+		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<link type="text/css" rel="stylesheet" href="nExtSlider.css" />
+		<script type="text/javascript" charset="utf-8" src="http://cdn.sencha.io/ext-4.0.7-gpl/ext-all.js"></script>
+		<script type="text/javascript" src="nExtSlider.js"></script>
+		<script type="text/javascript">
+			function randInt(min, max) {
+				return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+
+			function buzzwordCollection() {
+				this.bzwrd = new Array();
+				this.bzwrd[0] = new Array("Adaptive", "Advanced", "Ameliorated", "Assimilated", "Automated", "Balanced", "Business-focused", "Centralized", "Cloned", "Compatible", "Configurable", "Cross-group", "Cross-platform", "Customer-focused", "Customizable", "Decentralized", "De-engineered", "Devolved", "Digitized", "Distributed", "Diverse", "Down-sized", "Enhanced", "Enterprise-wide", "Ergonomic", "Exclusive", "Expanded", "Extended", "Face to face", "Focused", "Front-line", "Fully-configurable", "Function-based", "Fundamental", "Future-proofed", "Grass-roots", "Horizontal", "Implemented", "Innovative", "Integrated", "Intuitive", "Inverse", "Managed", "Mandatory", "Monitored", "Multi-channelled", "Multi-lateral", "Multi-layered", "Multi-tiered", "Networked", "Object-based", "Open-architected", "Open-source", "Operative", "Optimized", "Optional", "Organic", "Organized", "Persevering", "Persistent", "Phased", "Polarised", "Pre-emptive", "Proactive", "Profit-focused", "Profound", "Programmable", "Progressive", "Public-key", "Quality-focused", "Reactive", "Realigned", "Re-contextualized", "Re-engineered", "Reduced", "Reverse-engineered", "Right-sized", "Robust", "Seamless", "Secured", "Self-enabling", "Sharable", "Stand-alone", "Streamlined", "Switchable", "Synchronized", "Synergistic", "Synergized", "Team-oriented", "Total", "Triple-buffered", "Universal", "Up-sized", "Upgradable", "User-centric", "User-friendly", "Versatile", "Virtual", "Visionary", "Vision-oriented");
+				this.bzwrd[1] = new Array("24 hour", "24/7", "3rd generation", "4th generation", "5th generation", "6th generation", "actuating", "analyzing", "assymetric", "asynchronous", "attitude-oriented", "background", "bandwidth-monitored", "bi-directional", "bifurcated", "bottom-line", "clear-thinking", "client-driven", "client-server", "coherent", "cohesive", "composite", "context-sensitive", "contextually-based", "content-based", "dedicated", "demand-driven", "didactic", "directional", "discrete", "disintermediate", "dynamic", "eco-centric", "empowering", "encompassing", "even-keeled", "executive", "explicit", "exuding", "fault-tolerant", "foreground", "fresh-thinking", "full-range", "global", "grid-enabled", "heuristic", "high-level", "holistic", "homogeneous", "human-resource", "hybrid", "impactful", "incremental", "intangible", "interactive", "intermediate", "leading edge", "local", "logistical", "maximized", "methodical", "mission-critical", "mobile", "modular", "motivating", "multimedia", "multi-state", "multi-tasking", "national", "needs-based", "neutral", "next generation", "non-volatile", "object-oriented", "optimal", "optimizing", "radical", "real-time", "reciprocal", "regional", "responsive", "scalable", "secondary", "solution-oriented", "stable", "static", "systematic", "systemic", "system-worthy", "tangible", "tertiary", "transitional", "uniform", "upward-trending", "user-facing", "value-added", "web-enabled", "well-modulated", "zero administration", "zero defect", "zero tolerance");
+				this.bzwrd[2] = new Array("abilities", "access", "adapters", "algorithms", "alliances", "analyzers", "applications", "approaches", "architecture", "archives", "artificial intelligence", "arrays", "attitudes", "benchmarks", "budgetary management", "capabilities", "capacities", "challenges", "circuits", "collaboration", "complexity", "concepts", "conglomerations", "contingencies", "cores", "customer loyalty", "databases", "data-warehouses", "definitions", "emulation", "encoding", "encryption", "extranet", "firmware", "flexibility", "focus groups", "forecasts", "frames", "frameworks", "functions", "functionalities", "graphic interfaces", "groupware", "graphical user interfaces", "hardware", "help-desk", "hierarchies", "hubs", "implementations", "info-mediaries", "infrastructure", "initiatives", "installations", "instruction sets", "interfaces", "internet solutions", "intranets", "knowledge users", "knowledge bases", "local area networks", "leverage", "matrices", "methodologies", "middleware", "migration", "models", "moderator", "monitoring", "moratoriums", "neural-nets", "open architectures", "open systems", "orchestrations", "paradigms", "parallelism", "policies", "portals", "pricing structures", "process improvement", "products", "productivity", "projects", "projections", "protocols", "secured lines", "service-desks", "software", "solutions", "standardization", "strategies", "structures", "success", "superstructures", "support", "synergy", "system engines", "task-forces", "throughput", "time-frames", "toolsets", "utilisation", "websites", "workforces");
+
+			}
+
+			buzzwordCollection.prototype.rand = function() {
+				var randSkill = "";
+				randSkill += this.bzwrd[0][randInt(0, this.bzwrd[0].length - 1)].toLowerCase();
+				randSkill += " " + this.bzwrd[1][randInt(0, this.bzwrd[1].length - 1)];
+				randSkill += " " + this.bzwrd[2][randInt(0, this.bzwrd[2].length - 1)] + "." + " Just kidding.";
+
+				return randSkill;
+			}
+			var buzzy = new buzzwordCollection();
+
+			function doStuff() {
+				//document.getElementById("randomSkill").innerHTML = buzzy.rand();
+
+				Ext.create("nExtCompactSlider", {
+					cardTpl : "<img src='{img}'></img>",
+					tabTpl : "<h1>{heading}</h1><h2>Made with {subheading}</h2><span>{desc}</span><div class='pointer'></div>",
+					items : [{
+						img : 'http://lorempixum.com/600/500/city',
+						heading : 'AWS Control Panel',
+						subheading : 'PHP, Javascript, Amazon EC2 API',
+						desc : 'A simple dashboard that deploys and configures NodeJS+Redis servers in the Amazon Cloud.<br />Built for Crowded Room LLC.'
+					}, {
+						img : 'http://lorempixum.com/600/500/abstract',
+						heading : 'CrowdedRoom HTML5 App',
+						subheading : 'Javascript (Sencha Touch Framework)',
+						desc : 'One codebase, 3 platforms: the HTML5 version of the Crowded Room local social network runs on iPhone, Android, and Blackberry phones.'
+					}, {
+						img : 'http://lorempixum.com/600/500/technics',
+						heading : 'CrowdedRoom Control Panel',
+						subheading : 'Javascript (ExtJS Framework)',
+						desc : 'Every mobile app needs an admin interface. This control panel for Crowded Room tracks user growth, app usage, and allows developers to make seamless changes to the app\'s UI.'
+					}, {
+						img : 'http://rubicon.commons.yale.edu/MasterCommander/imgs/Donatello.jpg',
+						heading : 'Donatello',
+						subheading : 'PHP, Javascript',
+						desc : 'An app built for Yale archaeology and art history professors for annotating images with related commentary, images, and multimedia.<br /><a href="http://donatello.commons.yale.edu/demos.php"><div class="siteLink">SITE LINK</div></a>'
+					}, {
+						img : 'http://rubicon.commons.yale.edu/MasterCommander/imgs/Rubicon.png',
+						heading : 'Rubicon',
+						subheading : 'Javascript',
+						desc : 'Type Latin and French with their rich (and beautiful) symbols. A word processor customized for Yale language students.<br /><a href="http://rubicon.commons.yale.edu/"><div class="siteLink">SITE LINK</div></a>'
+					}],
+					shuffleCards : true,
+					slideDuration : 15000
+				});
+			}
+		</script>
+	</head>
+	<body onload="doStuff()">
+		<div class="container">
+			<div class="headerBar">
+				<span class="name">MARQ JEFFERSON</span>
+				<span class="randomSkillVerb"> </span><span class="randomSkill" id="randomSkill"></span>
+			</div>
+			<nav class="navBar">
+				<a class="currentPage">HOME</a><a href="samples.html">CODE SAMPLES</a><a class="comingSoon">TEMPLATES</a><a class="comingSoon">EXPERIMENTS</a>
+			</nav>
+			<div class="content">
+				<div class="sliderContainer">
+					<div class="heading">
+						PORTFOLIO
+					</div>
+					<div id="nExtCompactSlider">
+						<div id="nExt-cards" class="cards"></div>
+						<ul id="nExt-tabs" class="tabs"></ul>
+					</div>
+					<br />
+				</div>
+				<!--
+				<div class="about">
+					<div class="socialBadge">
+						<div class="profileImage">
+							<img src="https://lh5.googleusercontent.com/-b5-9RmP7gb8/ThjwXMnEo4I/AAAAAAAAIXc/hqEDz_bDTO8/s400/gloat.jpg" width=300></img>
+							<!-- <img src="http://lorempixel.com/300/300/people" width=300></img> 
+						</div>
+						<div class="socialIconDock">
+							<div class="socialIcon">
+								<a href=""><img src="http://icons.iconarchive.com/icons/mysitemyway/blue-jeans-social-media/128/facebook-square-icon.png"></img></a>
+							</div>
+							<div class="socialIcon">
+								<a href="http://www.linkedin.com/pub/marq-jefferson/11/a9b/636"><img src="http://icons.iconarchive.com/icons/mysitemyway/blue-jeans-social-media/128/linkedin-square-2-icon.png"></img></a>
+							</div>
+							<div class="socialIcon">
+								<a href="http://www.last.fm/user/Axelmarq"><img src="http://icons.iconarchive.com/icons/mysitemyway/blue-jeans-social-media/128/lastfm-icon.png"></img></a>
+							</div>
+							<div class="socialIcon">
+								<a href="http://lordkatarn.wordpress.com/"><img src="http://icons.iconarchive.com/icons/mysitemyway/blue-jeans-social-media/128/wordpress-icon.png"></img></a>
+							</div>
+						</div>
+					</div>
+					<h2>About Me</h2>
+					<p class="bodyText">
+						
+						<ul class="skillsList">
+							<li>
+								<span class="skill">PHP / MySQL</span><span class="rating">SW Map Back</span>
+							</li>
+							<li>
+								<span class="skill">Javascript</span><span class="rating">Simple O-O JS</span>
+							</li>
+							<li>
+								<span class="skill">ExtJS and Sencha Touch 2</span><span class="rating">View from CC</span>
+							</li>
+							<li>
+								<span class="skill">HTML5 + CSS3</span><span class="rating">Template's Source</span>
+							</li>
+							<li>
+								<span class="skill">jQuery</span><span class="rating"></span>
+							</li>
+						</ul>
+					<p class="bodyText">
+						<br />
+						Download Resume (pdf)
+					</p>
+					</p> 
+				</div>
+				<div class="pastWork">
+					<a name="samples"><h2>Code Samples</h2></a>
+					<article class="pastProject">
+						<header>
+							<h3>CR BB6+ App</h3><h5>Sencha Touch, JS, HTML/CSS, JSON</h5>
+						</header>
+						<img src="http://img1.sencha.com/files/misc/sencha-touch-1-1-hero1.png"></img>
+						Lorem ipsum dolor sit amet, consectetuer adipiscing elit. blah blah blah blah balbh labhaljbhabjlabhabohl.
+					</article>
+				</div>
+				<div class="anozer">
+					Lorem ipsum dolor sit amet consectetuer adispiscing elit suspendisse ut purus suspendisse tristique cras et sem at odio portitor.
+				</div>
+				-->
+			</div>
+	</body>
+</html>

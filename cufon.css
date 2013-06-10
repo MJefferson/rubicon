@@ -1,0 +1,5 @@
+@charset "UTF-8";
+/* CSS Document */
+
+h1 { color: darkred; font-size: 90px; }
+div { height: 400px; background-color: rgb(200,200,200); vertical-align:middle; }

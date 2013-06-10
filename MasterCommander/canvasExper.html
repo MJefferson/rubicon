@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+		Remove this if you use the .htaccess -->
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+		<title>canvasExper</title>
+		<meta name="description" content="" />
+		<meta name="author" content="Martial" />
+		<meta name="viewport" content="width=device-width; initial-scale=1.0" />
+		<!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+		<link rel="shortcut icon" href="/favicon.ico" />
+		<link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+		<style type="text/css">
+			.canvasDiv {
+				width: 1000px;
+				overflow: hidden;
+			}
+			#canvasElem {
+				opacity: 1;
+				background-color: #FFF;
+			}
+		</style>
+		<script type="text/javascript">
+			function randInt(min, max) {
+				return Math.floor(Math.random() * (max - min + 1)) + min;
+			}
+
+			function pastelColorCollection() {
+				//private array of default colors
+				var defaults = ["#1D120E", "#700800", "#C72700", "#FF7200", "#FFDBBC"];
+				var defaults = ["#14599E", "#000", "#FFF"];
+				//public getter function for default colors
+				this.getDefaults = function() {
+					return defaults;
+				}
+				//public array of colors
+				this.colors = defaults;
+			}
+
+			pastelColorCollection.prototype.rand = function() {
+				var randKey = randInt(0, this.colors.length - 1);
+				return this.colors[randKey];
+			}
+			function square(x, y, w, h) {
+				var height = 100;
+				var width = 100;
+				this.height = h || height;
+				this.width = w || width;
+				pastels = new pastelColorCollection();
+
+				ctx.save();
+				ctx.fillStyle = pastels.rand();
+				ctx.fillRect(x, y, this.width, this.height);
+				ctx.restore();
+			}
+
+			square.prototype.rand = function() {
+				var clientWidth = window.innerWidth;
+				var clientHeight = window.innerHeight;
+
+				var maxWidth = ((clientWidth - (clientWidth % 100)) / 100) - 1;
+				var maxHeight = ((clientHeight - (clientHeight % 100)) / 100) - 1;
+
+				var randCoordX = randInt(0, maxWidth);
+				var randCoordY = randInt(0, maxHeight);
+				var coordX = (randCoordX * 100) + 10;
+				var coordY = (randCoordY * 100) + 10;
+
+				new square(coordX, coordY);
+
+			}
+			
+			function loremPixum() {
+
+				var randCoordX = randInt(0, 9);
+				var randCoordY = randInt(0, 9);
+				var coordX = (randCoordX * 100) + 10;
+				var coordY = (randCoordY * 100) + 10;
+				randImg = new Image();
+				randImg.src = "http://lorempixel.com/100/100";
+				randImg.onload = function() {
+					ctx.drawImage(this, coordX, coordY, 100, 100);
+				}
+			}
+			
+			function doStuff(){
+				theCanvas = document.getElementById("canvasElem");
+				pastelColors = ["#1D120E","#700800","#C72700","#FF7200", "#FFDBBC"];
+				ctx = theCanvas.getContext("2d");
+				ctx.fillStyle = "rgb(100,100,255)";
+
+				var squareSingleton = new square(0,0,1,1);
+				window.setInterval(function(){
+					squareSingleton.rand();
+					//var rando = new loremPixum();
+				}, 100)
+			}
+		</script>
+	</head>
+	<body onload="doStuff();">
+		<div>
+			<header>
+				<h1>canvasExper</h1>
+			</header>
+			<nav>
+				<p>
+					<a href="/">Home</a>
+				</p>
+				<p>
+					<a href="/contact">Contact</a>
+				</p>
+			</nav>
+			<div class= "canvasDiv"><center><canvas id="canvasElem" width="1000px" height="500px" ></canvas></center></div>
+			<footer>
+				<p>
+					&copy; Copyright  by Martial
+				</p>
+			</footer>
+		</div>
+	</body>
+</html>
